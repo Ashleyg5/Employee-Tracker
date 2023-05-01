@@ -31,7 +31,7 @@ THEN I am prompted to select an employee to update and their new role and this i
 This is challenge 12 of the bootcamp. I was tasked with creating an employee tracker using MySQL, Node.js, and Inquirer. When the user opens the CLI and types in "node index.js", they will be met with a text logo and a prompt with several options to choose. Users can view all employees, all roles, all departments, add employees, add roles, add departments, and update current employee roles. If the user chooses "View all employees" they will be met with a table containing all employee names, ids, role ids, and manager ids. If the user needs to add an employee, they will click "add employee" and in the questions following, they will need to provide first and last name, role id, and manager id (if applicable). The rest of the "add" choices will follow a similar structure with questions. After adding a new role, department, or employee, the user will be able to click "view" whichever category they've added to and they will see the updated view containing the added information.
 
 ## Usage
-[Employee Tracker](https://drive.google.com/file/d/1gc9s3YFRy3lZrfuiUOfHdgfkgsLyjkE7/view)
+[Employee Tracker](https://drive.google.com/file/d/1_uyqusbewC4NcyM6lOCbVeA4yiYVwY93/view)
  
 ![Employee-Tracker-Img](https://i.gyazo.com/18718d6af7e58c6228bdcdb3f8ada86e.png)
 
