@@ -4,13 +4,13 @@ const db = require("./db");
 require("console.table");
 
 init();
-
+//init function which contains the text logo
 function init() {
     const logoText = logo({ name: "Employee Manager"}).render();
 
     console.log(logoText);
 }
-
+//function to load inquirer prompt, giving choices a name and value to drill in in the .then
 function loadMainPrompts() {
     prompt([
         {
@@ -47,14 +47,14 @@ function loadMainPrompts() {
                     value: "ADD_DEPARTMENT"
                 } 
             ]
-        }
+        } //.then which calls all methods in ./db/index.js using an if statement
     ]).then((res) => {
         if (res.choice === "VIEW_EMPLOYEES") {
             db.findAllEmployees().then(([rows]) => {
                 console.table(rows)
                 loadMainPrompts();
             })
-
+            //this else if adds employees so a prompt will be shown to input needed information
         } else if(res.choice === "ADD_EMPLOYEE") {
             prompt([
                 {
@@ -84,7 +84,7 @@ function loadMainPrompts() {
                     loadMainPrompts();
                 })
             })
-
+            //this else if updates employee roles so a prompt will be shown to input needed information
         } else if(res.choice === "UPDATE_EMPLOYEE_ROLE") {
             prompt([
                 {
@@ -98,7 +98,7 @@ function loadMainPrompts() {
                     message: "What is the new role ID of the employee?"   
                 }
             ]).then((res) => {
-                db.updateRole(res.employeeid, res.addnewroleid)
+                db.updateRole(res.addnewroleid, res.employeeid)
                 .then(([rows]) => {
                     console.table(rows)
                     loadMainPrompts();
@@ -110,7 +110,7 @@ function loadMainPrompts() {
                 console.table(rows)
                 loadMainPrompts();
             })
-
+            //this else if adds roles so a prompt will be shown to input needed information
         } else if(res.choice === "ADD_ROLE") {
             prompt([
                 {
@@ -141,7 +141,7 @@ function loadMainPrompts() {
                 console.table(rows)
                 loadMainPrompts();
             })
-
+            //this else if adds departments so a prompt will be shown to input needed information
         } else if(res.choice === "ADD_DEPARTMENT") {
             prompt([
                 {

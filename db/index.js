@@ -1,5 +1,6 @@
 const connection = require("./connection");
 
+//setting class DB with a constructor for the mySQL connection along with the methods for viewing and adding 
 class DB {
     constructor(connection) {
         this.connection = connection;
@@ -29,8 +30,8 @@ class DB {
         return this.connection.promise().query('INSERT INTO employees (first_name, last_name, role_id, manager_id)values(?,?,?,?)', [first_name, last_name, role_id, manager_id]);
     }
 
-    updateRole(id, role_id) {
-        return this.connection.promise().query('UPDATE TABLE employees SET role_id = ? WHERE id = ?', [id, role_id]);
+    updateRole(role_id, id) {
+        return this.connection.promise().query('UPDATE employees SET role_id = ? WHERE id = ?', [role_id, id]);
     }
 
 
